@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="dist/output.css" rel="stylesheet" />
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <title>Document</title>
+  </head>
+  <body
+    class="flex flex-col justify-start h-screen mx-6 mt-8 bg-shark-900 sm:mt-12 sm:mx-12 md:mt-16 md:mx-12 lg:mt-16 lg:mx-16 dark:text-shark-50"
+  >
+    <main class="flex flex-col items-center justify-center gap-16">
+      <div class="flex flex-col items-center gap-2 md:gap-3 lg:gap-3">
+        <h1
+          class="text-2xl font-bold text-center sm:text-3xl md:text-4xl lg:text-4xl"
+        >
+          <span class="">HTML</span> to <span class="">PDF</span> Converter
+        </h1>
+        <p
+          class="w-full text-sm font-normal text-center dark:text-shark-200 min-w-44ch max-w-50ch lg:min-w-65ch md:text-base lg:text-base"
+        >
+          Easily convert your HTML content into high-quality PDFs while
+          preserving the original layout and design. Perfect for creating any
+          printable content with minimal effort.
+        </p>
+      </div>
+
+      <!-- action -->
+      <section class="flex flex-col items-center justify-center w-full gap-8">
+        <form
+          class="flex flex-col items-center gap-2 md:flex-row lg:flex-row md:gap-7 lg:gap-7 w-max"
+        >
+          <input
+            class="px-3 py-2 text-sm bg-shark-800 placeholder:text-shark-500 text-shark-50 w-44ch rounded-3xl md:text-base lg:text-base"
+            type="text"
+            placeholder="Enter URL"
+            id="html-input"
+          />
+
+          <div class="flex flex-row items-center gap-1">
+            <button
+              class="px-3 py-2 text-sm font-medium text-shark-50 bg-accent md:px-4 lg:px-4 rounded-3xl text-nowrap md:text-base lg:text-base w-fit"
+              type="button"
+              id="convert-btn"
+            >
+              Convert to PDF
+            </button>
+
+            <button
+              class="px-3 py-2 text-base rounded-xl hover:bg-shark-700"
+              type="button"
+              id="upload-html"
+              aria-label="Upload"
+            >
+              <img src="assets/images/upload.svg" alt="" />
+            </button>
+          </div>
+        </form>
+
+        <div class="flex flex-col w-full gap-0 md:max-w-3xl lg:max-w-4xl">
+          <header
+            class="flex flex-row items-center justify-between w-full px-4 py-2 text-xs md:max-w-3xl lg:max-w-4xl md:text-sm lg:text-sm"
+          >
+            <p class="text-shark-200">Preview</p>
+            <button
+              class="flex flex-row items-center gap-2 px-3 py-2 font-medium rounded-2xl hover:bg-shark-800"
+              type="button"
+              id="download-pdf"
+            >
+              <img src="assets/images/download.svg" alt="Download icon" />
+              Download PDF
+            </button>
+          </header>
+
+          <div class="relative w-full">
+            <lottie-player
+              class="hidden w-[290px] aspect-square absolute right-0 left-0 mx-auto"
+              id="loader"
+              src="https://lottie.host/5affdfb1-4d3e-431a-891c-e778b8ae3faf/nsuUGXoYFA.json"
+              background="transparent"
+              speed="1"
+              loop
+              autoplay
+            ></lottie-player>
+
+            <p
+              class="absolute px-4 py-2 mx-auto transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 w-fit text-shark-500"
+              id="preview-label"
+            >
+              Your PDF will appear here
+            </p>
+
+            <iframe
+              class="w-full bg-shark-800 md:max-w-3xl lg:max-w-4xl h-80 md:h-96 lg:h-96 rounded-3xl"
+              title="preview"
+              frameborder="0"
+              id="preview"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="mt-auto text-center">
+      <p class="text-sm md:text-base lg:text-base dark:text-shark-400">
+        © 2024 Bernard Glenn B. Casera. All rights reserved.
+      </p>
+    </footer>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>
